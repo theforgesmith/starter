@@ -1,11 +1,10 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatstrap',
-    description: 'Gatsby starter for bootstrap a blog',
-    siteUrl: 'https://gatstrap.netlify.com',
-    author: 'jaxx2104',
-    twitter: 'jaxx2104',
-    adsense: '',
+    title: 'Starter',
+    description: 'Hello Starter!',
+    siteUrl: 'https://theforgesmith.com',
+    author: 'theforgesmith',
+    twitter: 'theforgesmith',
   },
   pathPrefix: '/',
   plugins: [
@@ -50,10 +49,10 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'Gatstrap',
-        short_name: 'Gatstrap',
-        description: 'Gatsby starter for bootstrap a blog',
-        homepage_url: 'https://gatstrap.netlify.com',
+        name: 'Starter',
+        short_name: 'Starter',
+        description: 'Hello Starter',
+        homepage_url: 'https://theforgesmith.com',
         start_url: '/',
         background_color: '#fff',
         theme_color: '#673ab7',
@@ -95,4 +94,4 @@ module.exports = {
     'gatsby-plugin-twitter',
     'gatsby-transformer-sharp',
   ],
-}
+};

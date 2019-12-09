@@ -1,11 +1,20 @@
 {
   "extends": [
+    "airbnb",
     "prettier",
+    "plugin:jest/recommended",
     "prettier/react"
   ],
+  "parser": "babel-eslint",
+  "globals": {
+    "document": true,
+    "__DEV__": true
+  },
   "plugins": [
     "react",
-    "prettier"
+    "prettier",
+    "markdown",
+    "json"
   ],
   "parserOptions": {
     "ecmaVersion": 2016,
@@ -24,8 +33,29 @@
       {
         "trailingComma": "es5",
         "singleQuote": true,
-        "semi": false
+        "semi": true
       }
-    ]
+    ],
+    "react/forbid-prop-types": 0,
+    "react/prop-types": 1,
+    "react/jsx-filename-extension": [
+      "error",
+      {
+        "extensions": [".js", ".jsx"]
+      }
+    ],
+    "import/no-unresolved": 0,
+    "import/prefer-default-export": 0,
+    "react/prefer-stateless-function": 0,
+    "jsx-a11y/label-has-for": 0,
+    "react/jsx-props-no-spreading": 1,
+    "jsx-a11y/label-has-associated-control": [ 2, {
+      "labelComponents": ["label"],
+      "labelAttributes": ["htmlFor"],
+      "controlComponents": ["input"]
+    }],
+    "no-underscore-dangle": 0,
+    "react/no-danger": 1
   }
 }
+
