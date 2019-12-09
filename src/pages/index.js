@@ -1,30 +1,9 @@
-import { graphql } from 'gatsby';
 import React from 'react';
-import get from 'lodash/get';
+import { graphql } from 'gatsby';
 
-import Post from 'templates/post';
-import Meta from 'components/Meta';
-import Layout from 'components/Layout';
+import HomePage from 'components/HomePage';
 
-const BlogIndex = ({ data, location }) => {
-  const posts = get(data, 'remark.posts');
-  return (
-    <Layout location={location}>
-      <Meta site={get(data, 'site.meta')} />
-      {posts.map(({ post }, i) => (
-        <Post
-          data={post}
-          options={{
-            isIndex: true,
-          }}
-          key={i}
-        />
-      ))}
-    </Layout>
-  );
-};
-
-export default BlogIndex;
+export default props => <HomePage {...props} />;
 
 export const pageQuery = graphql`
   query IndexQuery {
@@ -35,31 +14,6 @@ export const pageQuery = graphql`
         url: siteUrl
         author
         twitter
-      }
-    }
-    remark: allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
-    ) {
-      posts: edges {
-        post: node {
-          html
-          frontmatter {
-            layout
-            title
-            path
-            category
-            tags
-            description
-            date(formatString: "YYYY/MM/DD")
-            image {
-              childImageSharp {
-                fluid(maxWidth: 500) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-          }
-        }
       }
     }
   }

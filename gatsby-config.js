@@ -40,7 +40,6 @@ module.exports = {
               wrapperStyle: 'margin-bottom: 1.0725rem',
             },
           },
-          'gatsby-remark-prismjs',
           'gatsby-remark-copy-linked-files',
           'gatsby-remark-smartypants',
         ],
@@ -49,13 +48,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'Starter',
-        short_name: 'Starter',
-        description: 'Hello Starter',
-        homepage_url: 'https://theforgesmith.com',
+        name: 'SeasonTwo Ventures',
+        short_name: 'Season2 VC',
+        description: 'We bring early stage ideas to the global stage.',
+        homepage_url: 'https://www.seasontwo.vc/',
         start_url: '/',
         background_color: '#fff',
-        theme_color: '#673ab7',
+        theme_color: '#284D85',
         display: 'standalone',
         icons: [
           {
@@ -77,14 +76,6 @@ module.exports = {
         trackingId: '',
       },
     },
-    {
-      resolve: 'gatsby-plugin-netlify',
-      options: {
-        mergeSecurityHeaders: true,
-        mergeLinkHeaders: true,
-        mergeCachingHeaders: true,
-      },
-    },
     'gatsby-plugin-catch-links',
     'gatsby-plugin-offline',
     'gatsby-plugin-react-helmet',
@@ -93,5 +84,22 @@ module.exports = {
     'gatsby-plugin-sitemap',
     'gatsby-plugin-twitter',
     'gatsby-transformer-sharp',
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /\.local\.svg$/,
+          exclude: /node_modules|assets/,
+        },
+      },
+    },
+    'gatsby-plugin-remove-trailing-slashes',
+    'gatsby-transformer-json',
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/content/data/`,
+      },
+    },
   ],
 };

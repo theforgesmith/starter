@@ -1,9 +1,8 @@
-const each = require('lodash/each')
-const path = require('path')
-const PostTemplate = path.resolve('./src/templates/index.js')
+const each = require('lodash/fp/each');
+const path = require('path');
 
 exports.createPages = ({ graphql, actions }) => {
-  const { createPage } = actions
+  const { createPage } = actions;
 
   return new Promise((resolve, reject) => {
     resolve(
@@ -16,13 +15,6 @@ exports.createPages = ({ graphql, actions }) => {
                   id
                   name: sourceInstanceName
                   path: absolutePath
-                  remark: childMarkdownRemark {
-                    id
-                    frontmatter {
-                      layout
-                      path
-                    }
-                  }
                 }
               }
             }
@@ -30,36 +22,26 @@ exports.createPages = ({ graphql, actions }) => {
         `
       ).then(({ errors, data }) => {
         if (errors) {
-          console.log(errors)
-          reject(errors)
+          console.log(errors);
+          reject(errors);
         }
 
         // Create blog posts & pages.
-        const items = data.allFile.edges
-        const posts = items.filter(({ node }) => /posts/.test(node.name))
-        each(posts, ({ node }) => {
-          if (!node.remark) return
-          const { path } = node.remark.frontmatter
-          createPage({
-            path,
-            component: PostTemplate,
-          })
-        })
+        const items = data.allFile.edges;
 
-        const pages = items.filter(({ node }) => /page/.test(node.name))
-        each(pages, ({ node }) => {
-          if (!node.remark) return
-          const { name } = path.parse(node.path)
-          const PageTemplate = path.resolve(node.path)
+        const pages = items.filter(({ node }) => /page/.test(node.name));
+        each(({ node }) => {
+          const { name } = path.parse(node.path);
+          const PageTemplate = path.resolve(node.path);
           createPage({
             path: name,
             component: PageTemplate,
-          })
-        })
+          });
+        }, pages);
       })
-    )
-  })
-}
+    );
+  });
+};
 
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
@@ -70,5 +52,5 @@ exports.onCreateWebpackConfig = ({ actions }) => {
         scss: path.resolve(__dirname, 'src/scss'),
       },
     },
-  })
-}
+  });
+};
