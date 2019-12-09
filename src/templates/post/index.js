@@ -1,13 +1,11 @@
-import { Link } from 'gatsby'
-import Img from 'gatsby-image'
-import React from 'react'
+import { Link } from 'gatsby';
+import Img from 'gatsby-image';
+import React from 'react';
 
-import get from 'lodash/get'
-import map from 'lodash/map'
+import get from 'lodash/get';
+import map from 'lodash/map';
 
-import Adsense from 'components/adsense'
-
-import './style.scss'
+import './style.scss';
 
 const Post = ({ data, options }) => {
   const {
@@ -18,11 +16,11 @@ const Post = ({ data, options }) => {
     path,
     date,
     image,
-  } = data.frontmatter
-  const { isIndex, adsense } = options
-  const html = get(data, 'html')
-  const isMore = isIndex && !!html.match('<!--more-->')
-  const fluid = get(image, 'childImageSharp.fluid')
+  } = data.frontmatter;
+  const { isIndex } = options;
+  const html = get(data, 'html');
+  const isMore = isIndex && !!html.match('<!--more-->');
+  const fluid = get(image, 'childImageSharp.fluid');
 
   return (
     <div className="article" key={path}>
@@ -50,28 +48,23 @@ const Post = ({ data, options }) => {
           }}
         />
         {isMore ? Button({ path, label: 'MORE', primary: true }) : ''}
-        {getAd(isIndex, adsense)}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Post
-
-const getAd = (isIndex, adsense) => {
-  return !isIndex ? <Adsense clientId={adsense} slotId="" format="auto" /> : ''
-}
+export default Post;
 
 const getDescription = body => {
-  body = body.replace(/<blockquote>/g, '<blockquote class="blockquote">')
+  body = body.replace(/<blockquote>/g, '<blockquote class="blockquote">');
   if (body.match('<!--more-->')) {
-    body = body.split('<!--more-->')
+    body = body.split('<!--more-->');
     if (typeof body[0] !== 'undefined') {
-      return body[0]
+      return body[0];
     }
   }
-  return body
-}
+  return body;
+};
 
 const Button = ({ path, label, primary }) => (
   <Link className="readmore" to={path}>
@@ -83,7 +76,7 @@ const Button = ({ path, label, primary }) => (
       {label}
     </span>
   </Link>
-)
+);
 
 const Badges = ({ items, primary }) =>
   map(items, (item, i) => {
@@ -94,5 +87,5 @@ const Badges = ({ items, primary }) =>
       >
         {item}
       </span>
-    )
-  })
+    );
+  });

@@ -1,13 +1,13 @@
-import { graphql } from 'gatsby'
-import React from 'react'
-import get from 'lodash/get'
+import { graphql } from 'gatsby';
+import React from 'react';
+import get from 'lodash/get';
 
-import Post from 'templates/post'
-import Meta from 'components/meta'
-import Layout from 'components/layout'
+import Post from 'templates/post';
+import Meta from 'components/meta';
+import Layout from 'components/layout';
 
 const BlogIndex = ({ data, location }) => {
-  const posts = get(data, 'remark.posts')
+  const posts = get(data, 'remark.posts');
   return (
     <Layout location={location}>
       <Meta site={get(data, 'site.meta')} />
@@ -21,10 +21,10 @@ const BlogIndex = ({ data, location }) => {
         />
       ))}
     </Layout>
-  )
-}
+  );
+};
 
-export default BlogIndex
+export default BlogIndex;
 
 export const pageQuery = graphql`
   query IndexQuery {
@@ -35,7 +35,6 @@ export const pageQuery = graphql`
         url: siteUrl
         author
         twitter
-        adsense
       }
     }
     remark: allMarkdownRemark(
@@ -64,4 +63,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
