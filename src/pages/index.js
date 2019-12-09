@@ -3,8 +3,8 @@ import React from 'react';
 import get from 'lodash/get';
 
 import Post from 'templates/post';
-import Meta from 'components/meta';
-import Layout from 'components/layout';
+import Meta from 'components/Meta';
+import Layout from 'components/Layout';
 
 const BlogIndex = ({ data, location }) => {
   const posts = get(data, 'remark.posts');
