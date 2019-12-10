@@ -5,7 +5,7 @@ import Footer from 'components/footer';
 import { siteMetadata } from '../../../gatsby-config';
 
 import 'modern-normalize/modern-normalize.css';
-import 'scss/gatstrap.scss';
+import 'scss/main.scss';
 
 export default function Layout(props) {
   const { children } = props;
