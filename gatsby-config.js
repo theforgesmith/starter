@@ -46,31 +46,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: 'SeasonTwo Ventures',
-        short_name: 'Season2 VC',
-        description: 'We bring early stage ideas to the global stage.',
-        homepage_url: 'https://www.seasontwo.vc/',
-        start_url: '/',
-        background_color: '#fff',
-        theme_color: '#284D85',
-        display: 'standalone',
-        icons: [
-          {
-            src: '/img/android-chrome-192x192.png',
-            sizes: '192x192',
-            type: 'image/png',
-          },
-          {
-            src: '/img/android-chrome-512x512.png',
-            sizes: '512x512',
-            type: 'image/png',
-          },
-        ],
-      },
-    },
-    {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
         trackingId: '',
