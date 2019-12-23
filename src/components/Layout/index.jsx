@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Nav from 'components/Nav';
-import Footer from 'components/footer';
+import Footer from 'components/Footer';
 import { siteMetadata } from '../../../gatsby-config';
 
 import 'modern-normalize/modern-normalize.css';
