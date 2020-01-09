@@ -16,7 +16,7 @@
     "gatsby-plugin-nprogress": "2.1.18",
     "gatsby-plugin-offline": "3.0.30",
     "gatsby-plugin-preact": "3.1.25",
-    "gatsby-plugin-react-helmet": "3.1.18",
+    "gatsby-plugin-react-helmet": "3.1.21",
     "gatsby-plugin-react-svg": "3.0.0",
     "gatsby-plugin-remove-trailing-slashes": "2.1.17",
     "gatsby-plugin-sass": "^2.1.27",
