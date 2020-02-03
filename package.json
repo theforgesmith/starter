@@ -52,7 +52,7 @@
     "modern-normalize": "0.6.0",
     "node-sass": "4.13.1",
     "prettier": "1.19.1",
-    "textlint": "11.6.1",
+    "textlint": "11.6.2",
     "textlint-rule-preset-ja-spacing": "2.0.1",
     "textlint-rule-preset-japanese": "4.0.4"
   },
