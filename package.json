@@ -31,7 +31,7 @@
     "gatsby-source-filesystem": "2.3.0",
     "gatsby-transformer-json": "2.4.0",
     "gatsby-transformer-remark": "2.8.4",
-    "gatsby-transformer-sharp": "2.5.0",
+    "gatsby-transformer-sharp": "2.5.1",
     "lodash": "4.17.15",
     "react": "16.13.1",
     "react-dom": "16.13.1",
