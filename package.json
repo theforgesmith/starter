@@ -46,7 +46,7 @@
     "eslint-plugin-json": "^2.1.2",
     "eslint-plugin-markdown": "^1.0.2",
     "eslint-plugin-prettier": "3.1.4",
-    "eslint-plugin-react": "7.20.4",
+    "eslint-plugin-react": "7.20.5",
     "husky": "4.2.5",
     "lint-staged": "10.2.11",
     "modern-normalize": "0.7.0",
